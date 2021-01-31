@@ -5,7 +5,7 @@ A command line tool that returns the amount of CO2-equivalent that will be cause
 
 ### Install dependencies
 
->Go to your project root folder via command line
+>After clone/download the project, go to your project root folder via command line
 ```
 cd /dev_co2
 ```

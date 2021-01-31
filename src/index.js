@@ -63,46 +63,28 @@ var getter = yargs
     var output_unit = argv.output;
     var mode ; // a string variable (example: 'km-kg') that can distinguish among four different units combination.
     // construct the mode
-    switch (argv.unit_dis){
-      case 'km':
-        if (output_unit==undefined){
-          mode  = 'kg-'+argv.unit_dis
-        }
-        else{
-          mode  = output_unit+'-'+argv.unit_dis
-        }
-      case 'm':
-        if (output_unit==undefined){
-          mode  = 'g-'+argv.unit_dis
-        }
-        else{
-          mode  = output_unit+'-'+argv.unit_dis
-        }
+    if (output_unit==undefined){
+      output_unit = (argv.unit_dis=='km') ? output_unit = 'kg' :  output_unit = 'g'
     }
+    mode  = output_unit+'-'+argv.unit_dis
     // according to the mode to modified the result
-  switch (mode) {
-    case 'kg-km':
-      result /= 1000
-      break;
-
-    case 'kg-m': 
-      result /= 1e6
-      break;
-
-    case 'g-km': 
-      result /= 1000
-      break; 
-
-    case 'g-m':
-      result /= 1000
-      break;
-
-    default:
-      result = result
-  }
-  // print the final result on the command line
-  console.log(`Your trip caused ${result.toFixed(1)} ${output_unit} of CO2-equivalent.`)
-  return result
+    switch (mode) {
+      case 'kg-km':
+        result /= 1000
+        break;
+      case 'kg-m': 
+        result /= 1e6
+        break;
+      case 'g-km': 
+        result = result 
+        break; 
+      case 'g-m':
+        result /= 1000
+        break;
+      default:
+        result = result
+    }
+  return {result:result,output_unit:output_unit,dist_unit:argv.unit_dis}
   }
 
 module.exports = {getter,calculator,keys,car_dic,distanceErr};
