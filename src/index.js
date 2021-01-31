@@ -20,6 +20,7 @@ for(var i=0; i<car_sizes.length;i++){
     }
 }
 const keys = Object.keys(car_dic);
+console.log(keys)
 /** Build the command line tool using yargs
  * getter : get arguments and set corresponding constraints 
  * calculator : compute and show the result on the command line.
