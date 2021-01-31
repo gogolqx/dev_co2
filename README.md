@@ -1,22 +1,20 @@
 # CO2 Calculator using yargs
 A command line tool that returns the amount of CO2-equivalent that will be caused when traveling a given distance using a given transportation method.
 
-## Install
+## 1. How to run the tool
 
-### Before first run
+### Install dependencies
 
-Go to your project root folder via command line
+>Go to your project root folder via command line
 ```
 cd /dev_co2
 ```
-### Add node dependencies
-
+>Add node dependencies
 
 ```
 npm install
 ```
 ### Start Tool
-
 
 ```
 node co2-calculator.js --transportation-method [str] --distance [num]
@@ -38,3 +36,8 @@ all transportation methods are listed as follows:
   'large-plugin-hybrid-car',
   'large-electric-car'
 ]
+
+## 2. How to run the unit-test
+```
+mocha test.js
+```
