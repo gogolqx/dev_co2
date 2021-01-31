@@ -1,0 +1,13 @@
+{
+  "name": "co2-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "co2-calculator.js",
+  "scripts": {
+    "start": "node co2-calculator.js"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "yargs": "^13.2.2"
+  }
+}
